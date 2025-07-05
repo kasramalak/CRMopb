@@ -1,0 +1,231 @@
+/* OPBCRM Modern Glassmorphism Kanban Styles */
+
+:root {
+  --primary: #83A2DB;
+  --primary-grad: linear-gradient(96deg, #95b7f3 0%, #4b68b6 100%);
+  --danger: #E55C60;
+  --panel-glass: rgba(255,255,255,0.85);
+  --input-bg: rgba(245,247,252,0.87);
+  --white: #fff;
+  --shadow: 0 8px 40px 0 rgba(100,120,200,0.10);
+  --radius: 22px;
+  --font-main: 'Inter', sans-serif;
+}
+
+.crm-kanban-panel {
+  background: rgba(255,255,255,0.18);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.22);
+  font-family: var(--font-main);
+  padding: 32px 28px 24px 28px;
+  margin-bottom: 40px;
+}
+
+.pipeline-board {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 18px;
+}
+
+.pipeline-stage {
+  background: rgba(255,255,255,0.22);
+  border: 1.5px solid #e5e5e5;
+  border-radius: 18px;
+  min-width: 320px;
+  max-width: 360px;
+  box-shadow: 0 2px 12px 0 rgba(31,38,135,0.07);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.18s, border 0.18s, background 0.18s;
+  backdrop-filter: blur(10px);
+}
+.pipeline-stage:hover {
+  box-shadow: 0 4px 24px 0 rgba(31,38,135,0.13);
+  border-color: var(--primary);
+  background: rgba(255,255,255,0.32);
+}
+.crm-kanban-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.crm-stage-badge {
+  padding: 5px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 4px 0 rgba(31,38,135,0.07);
+  color: #fff;
+}
+.crm-stage-count {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  background: rgba(255,255,255,0.7);
+  padding: 3px 12px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px 0 rgba(31,38,135,0.07);
+}
+.crm-kanban-leads {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.crm-kanban-card.lead-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+  padding: 13px 16px;
+  box-shadow: 0 2px 12px 0 rgba(31,38,135,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border: 1.5px solid rgba(131,162,219,0.13);
+  cursor: grab;
+  font-size: 0.93rem;
+  transition: box-shadow 0.18s, border 0.18s, background 0.18s;
+  position: relative;
+}
+.crm-kanban-card.lead-card:hover {
+  box-shadow: 0 4px 24px 0 rgba(131,162,219,0.18);
+  border-color: var(--primary);
+  background: rgba(255,255,255,0.98);
+}
+.crm-kanban-card.lead-card:active {
+  background: rgba(255,255,255,1);
+  border-color: #4b68b6;
+}
+.crm-kanban-card img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px 0 rgba(31,38,135,0.07);
+}
+.crm-kanban-card .crm-btn {
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  margin-left: 4px;
+}
+.crm-btn-edit {
+  background: var(--primary-grad);
+  color: #fff;
+}
+.crm-btn-delete {
+  background: rgba(200,40,40,0.13);
+  color: #c82828;
+}
+.crm-btn-edit:hover {
+  filter: brightness(1.1);
+}
+.crm-btn-delete:hover {
+  background: rgba(200,40,40,0.22);
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .pipeline-board {
+    gap: 12px;
+  }
+  .pipeline-stage {
+    min-width: 240px;
+    max-width: 98vw;
+    padding: 10px;
+  }
+  .crm-kanban-card.lead-card {
+    padding: 9px 8px;
+    font-size: 0.89rem;
+  }
+}
+@media (max-width: 600px) {
+  .crm-kanban-panel {
+    padding: 8px 2vw;
+  }
+  .pipeline-stage {
+    min-width: 180px;
+    padding: 7px;
+  }
+  .crm-kanban-card.lead-card {
+    padding: 7px 4px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Drag placeholder */
+.lead-card-placeholder {
+  background: rgba(131,162,219,0.13);
+  border: 2px dashed var(--primary);
+  border-radius: 14px;
+  min-height: 48px;
+  margin-bottom: 10px;
+}
+
+.kanban-quick-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 2px 0 2px 0;
+}
+.kanban-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.65);
+  box-shadow: 0 1px 4px 0 rgba(31,38,135,0.07);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+.kanban-action-btn:hover {
+  background: rgba(131,162,219,0.13);
+  box-shadow: 0 2px 8px 0 rgba(131,162,219,0.13);
+  filter: brightness(1.15);
+  text-decoration: none;
+}
+.kanban-action-btn:active {
+  background: rgba(131,162,219,0.22);
+}
+.kanban-action-btn i {
+  pointer-events: none;
+}
+
+.user-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.65);
+  box-shadow: 0 1px 4px 0 rgba(31,38,135,0.07);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  margin-right: 4px;
+}
+.user-action-btn:hover {
+  background: rgba(131,162,219,0.13);
+  box-shadow: 0 2px 8px 0 rgba(131,162,219,0.13);
+  filter: brightness(1.15);
+  text-decoration: none;
+}
+.user-action-btn:active {
+  background: rgba(131,162,219,0.22);
+}
+.user-action-btn i {
+  pointer-events: none;
+} 
